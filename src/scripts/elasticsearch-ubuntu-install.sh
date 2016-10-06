@@ -460,7 +460,7 @@ port_forward()
 
     #install iptables-persistent to restore configuration after reboot
     log "[port_forward] installing iptables-persistent"
-    apt-get -y install iptables-persistent
+    sudo DEBIAN_FRONTEND=noninteractive apt-get -yq install iptables-persistent
     #persist the rules to file
     sudo service iptables-persistent save
     sudo service iptables-persistent start
